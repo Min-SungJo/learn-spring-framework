@@ -2,6 +2,8 @@ package com.ride.learnspringframework;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.util.Arrays;
+
 public class AppHelloWorldSpring {
     public static void main(String[] args) {
 
@@ -20,6 +22,12 @@ public class AppHelloWorldSpring {
         System.out.println(context.getBean("person3Parameters"));
         System.out.println(context.getBean("address2"));
         System.out.println(context.getBean("address3"));
-//        System.out.println(context.getBean(Address.class));
+        System.out.println(context.getBean(Address.class));
+        System.out.println(context.getBean(Person.class));
+        System.out.println(context.getBean("person5Qualifier"));
+
+        Arrays.stream(context.getBeanDefinitionNames())
+                .forEach(System.out::println);
+        System.out.println(context.getBeanDefinitionCount());
     }
 }
